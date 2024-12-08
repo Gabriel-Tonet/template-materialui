@@ -122,10 +122,18 @@ const ListarTarefa = () => {
                     <TableCell align="right">{row.statusTarefa}</TableCell>
                     <TableCell align="right">{row.recursoTarefa}</TableCell>
                     <TableCell align="center">
-                      <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>
+                      <Button variant="contained" sx={{
+                        backgroundColor: '#EF7416', '&:hover': {
+                          backgroundColor: '#CC7025'
+                        }
+                      }} onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>
                     </TableCell>
                     <TableCell align="center">
-                      <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>
+                      <Button variant="contained" sx={{
+                        backgroundColor: '#EF0F05', '&:hover': {
+                          backgroundColor: '#CC3525'
+                        }
+                      }} onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -134,8 +142,18 @@ const ListarTarefa = () => {
           </TableContainer>
         </CardContent>
         <CardActions>
-          <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
-          <Button size="small" variant="outlined">Cancelar</Button>
+          <Button size="medium" variant="contained" sx={{
+            backgroundColor: '#00F014', color: '#000000', fontWeight: '600', '&:hover': {
+              color: '#FFFFFF',
+              backgroundColor: '#26A31D'
+            }
+          }} onClick={handleOpen}>Criar Tarefa</Button>
+          <Button size="medium" variant="outlined" sx={{
+            backgroundColor: '#F0EC2B', color: '#000000', fontWeight: '600', '&:hover': {
+              color: '#FFFFFF',
+              backgroundColor: '#CCC925'
+            }
+          }}>Cancelar</Button>
         </CardActions>
       </Card>
       <div>
